@@ -6,6 +6,7 @@ $(function () {
 var timeBlock = $('.time-block')
 timeBlock.on('click', '.saveBtn', function() {
   var boxText = $(this).closest('.time-block').find('.description').val()
+  
   localStorage.setItem($(this).closest('.time-block').attr('id') + ' boxText', boxText)
 })
 
@@ -45,11 +46,12 @@ timeBlock.on('click', '.saveBtn', function() {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-window.onload = setInterval(function() {
-  var currentDay = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
-  $('#currentDay').text(currentDay)
+  window.onload = setInterval(function() {
+    var currentDay = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+    $('#currentDay').text(currentDay)
 }, 0)
-
   
-  // TODO: Add code to display the current date in the header of the page.
 });
+
+
+// TODO: Add code to display the current date in the header of the page.

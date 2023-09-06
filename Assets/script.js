@@ -7,6 +7,7 @@ var timeBlock = $('.time-block')
 timeBlock.on('click', '.saveBtn', function() {
   var boxText = $(this).closest('.time-block').find('.description').val()
   localStorage.setItem($(this).closest('.time-block').attr('id') + ' boxText', boxText)
+})
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -15,7 +16,7 @@ timeBlock.on('click', '.saveBtn', function() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-  timeBlock
+  timeBlock.each(function() {
     if (parseInt($(this).attr('id')) < dayjs().format('H')) {
       $(this).addClass('past')
     } else if (parseInt($(this).attr('id')) > dayjs().format('H')) {
